@@ -1,0 +1,36 @@
+<section class="o-card-grid">
+  <header class="o-card-grid__title">
+    {% block header %}
+      {% include "@atoms/00-type/00-heading.twig"
+      with {
+      heading: {
+      label: title,
+      level: 2,
+      variation: 4,
+      align: "center",
+      color: "light"
+      }
+      }
+      %}
+    {% endblock %}
+  </header>
+  <div class="o-card-grid__inner">
+    {% block content %}
+      {% for card in cards %}
+        {% include "@molecules/card/card.twig"
+        with {
+        "card_img": card.card_img,
+        "card_title": card.card_title
+        }
+        %}
+      {% endfor %}
+    {% endblock %}
+  </div>
+  {% if footer %}
+    <footer class="o-card-grid__footer">
+      {% block footer %}
+        {{ footer }}
+      {% endblock %}
+    </footer>
+  {% endif %}
+</section>
