@@ -13,9 +13,13 @@
     %}
   </header>
   <div class="o-recent-orders__inner">
-
+    {% include "@organisms/carousel/carousel.twig"
+    with {
+      carousel_items: orders
+    }
+    %}
   </div>
-  <div class="o-recent-orders__image-wrapper js-parallax-overflow" data-overflow-ratio="0.32">
+  <div class="o-recent-orders__image-wrapper js-parallax" data-rellax-percentage="-0.3" data-rellax-speed="3">
     <img alt="Шашлычки" class="o-stats__image" src="{{ base_path ~ directory }}/assets/img/landing/done_orders.png">
   </div>
 </section>
