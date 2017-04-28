@@ -1,0 +1,25 @@
+<div class="o-events">
+  {% embed "@layouts/grid/grid.twig" with {
+  grid_variation: ['2col', 'spaceless']
+  } %}
+
+    {% block grid_content %}
+      {# Drupal content #}
+      {% if grid_content %}
+        {{ grid_content }}
+        {# PL content in JSON #}
+      {% else %}
+        {% for event in events %}
+          {% include "@molecules/event-card/event-card.twig"
+          with {
+          "types": event.types,
+          "description": event.description,
+          "image": event.image,
+          }
+          %}
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
+</div>
+

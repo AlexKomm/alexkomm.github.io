@@ -1,0 +1,21 @@
+<section class="o-recent-orders">
+  <header class="o-recent-orders__header">
+    {% include "@atoms/00-type/00-heading.twig"
+    with {
+      heading: {
+      label: title,
+      level: 2,
+      variation: 4,
+      align: "center",
+      color: "dark"
+      }
+    }
+    %}
+  </header>
+  <div class="o-recent-orders__inner">
+
+  </div>
+  <div class="o-recent-orders__image-wrapper js-parallax-overflow" data-overflow-ratio="0.32">
+    <img alt="Шашлычки" class="o-stats__image" src="{{ base_path ~ directory }}/assets/img/landing/done_orders.png">
+  </div>
+</section>
