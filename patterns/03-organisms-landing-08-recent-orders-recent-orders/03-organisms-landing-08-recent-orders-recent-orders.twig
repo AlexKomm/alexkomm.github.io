@@ -15,7 +15,9 @@
   <div class="o-recent-orders__inner">
     {% include "@organisms/carousel/carousel.twig"
     with {
-      carousel_items: orders
+      carousel_class: "js-carousel-recent-orders",
+      carousel_items: orders,
+      carousel_controls: true,
     }
     %}
   </div>

@@ -1,0 +1,22 @@
+<div class="m-partner-card">
+  <div class="m-partner-card__inner">
+    <div class="m-partner-card__logo">
+      <img alt="Логотип" class="m-partner-card__image js-lazy-bg" data-original="{{ logo }}">
+    </div>
+    {% include "@molecules/stars/stars.twig"
+    with {
+    rating: rating
+    }
+    %}
+  </div>
+  <div class="m-partner-card__aside">
+    <div class="m-partner-card__link">
+      <div class="a-color-green a-type--base">{{ dishes_count }}</div>
+      блюд
+    </div>
+    <div class="m-partner-card__link">
+      <div class="a-color-green a-type--base">{{ completed_orders_count }}</div>
+      сделок
+    </div>
+  </div>
+</div>

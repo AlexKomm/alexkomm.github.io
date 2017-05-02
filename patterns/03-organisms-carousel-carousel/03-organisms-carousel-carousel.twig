@@ -1,6 +1,6 @@
 <div class="o-carousel">
-  <div class="o-carousel__wrapper js-carousel">
-    <ul class="o-carousel__list js-carousel-list">
+  <div class="o-carousel__wrapper {{ carousel_class }}">
+    <ul class="o-carousel__list">
       {% for item in carousel_items %}
         {% include "@molecules/carousel-item/carousel-item.twig"
         with {
@@ -10,6 +10,8 @@
       {% endfor %}
     </ul>
   </div>
-  <a href="#" class="o-carousel__control o-carousel__control--prev js-carousel-control-prev"></a>
-  <a href="#" class="o-carousel__control o-carousel__control--next js-carousel-control-next"></a>
+  {% if carousel_controls %}
+    <a href="#" class="o-carousel__control o-carousel__control--prev js-carousel-control-prev"></a>
+    <a href="#" class="o-carousel__control o-carousel__control--next js-carousel-control-next"></a>
+  {% endif %}
 </div>
