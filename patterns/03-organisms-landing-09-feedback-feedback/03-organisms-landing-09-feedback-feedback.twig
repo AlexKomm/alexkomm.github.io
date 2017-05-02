@@ -1,0 +1,25 @@
+<section class="o-feedback">
+  <div class="o-feedback__inner">
+    <header class="o-feedback__header">
+      {% include "@atoms/00-type/00-heading.twig"
+      with {
+      heading: {
+      label: title,
+      level: 2,
+      variation: 4,
+      align: "center",
+      color: "dark"
+      }
+      }
+      %}
+    </header>
+    <div class="o-feedback__main">
+      {% for feedback in feedbacks %}
+        {{ feedback.content }}
+      {% endfor %}
+    </div>
+    <footer class="o-feedback__footer">
+      <a href="#" class="a-btn--transparent-green-hover">Все {{ feedback_count }}</a>
+    </footer>
+  </div>
+</section>
