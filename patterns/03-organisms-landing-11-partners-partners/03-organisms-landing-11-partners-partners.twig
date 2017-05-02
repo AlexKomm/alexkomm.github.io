@@ -1,11 +1,26 @@
-<div class="o-partners">
+<section class="o-partners">
+  <header class="o-partners__header">
+    {% block header %}
+      {% include "@atoms/00-type/00-heading.twig"
+      with {
+      heading: {
+      label: title,
+      level: 2,
+      variation: 4,
+      align: "center",
+      color: "light"
+      }
+      }
+      %}
+    {% endblock %}
+  </header>
   {% include "@organisms/carousel/carousel.twig"
   with {
     carousel_class: "js-carousel-partners",
     carousel_items: partners
   }
   %}
-  <div class="o-partners__all">
+  <footer class="o-partners__footer">
     <a href="#" class="a-btn--green-white-hover">Все партнеры</a>
-  </div>
-</div>
+  </footer>
+</section>
