@@ -1,9 +1,7 @@
-<section class="l-grid__item m-event-card js-lazy-bg" data-original="{{ image }}">
+<section class="l-grid__item m-event-card js-lazy-bg" data-original="{{ base_path ~ directory ~ image }}">
   <div class="m-event-card__inner">
     <p class="m-event-card__description">{{ description }}</p>
-    <h3 class="a-heading__h3-bold m-event-card__title">{{ types }}</h3>
+    <p class="m-event-card__title">{{ types }}</p>
   </div>
-  <div class="m-event-card__button">
-    <a href="#" class="a-btn a-btn--transparent">Разместить заявку</a>
-  </div>
+  <a href="javascript:void(0);" class="m-event-card__button js-toggle-popup-form">Разместить заявку</a>
 </section>

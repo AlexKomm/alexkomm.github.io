@@ -1,4 +1,24 @@
 <footer class="o-footer">
-  <div class="o-footer__legal">&copy; {{ year }} Mainspring</div>
-  <div class="o-footer__logo">{{ footer_logo }}</div>
+  {% if short %}
+  <div class="o-footer__inner-flat">
+    <a href="/about" class="a-link m-footer-links__link" data-drupal-link-system-path="offers">О компании</a>
+    <a href="/offers" class="a-link m-footer-links__link" data-drupal-link-system-path="offers">Готовые предложения</a>
+    <a href="/partner" class="a-link m-footer-links__link" data-drupal-link-system-path="node/6">Стать партнером</a>
+    <a href="/orders" title="Поиск заявок на кейтеринговые услуги" class="a-link m-footer-links__link" data-drupal-link-system-path="orders">Поиск заявок</a>
+    <a href="/contacts" class="a-link m-footer-links__link" data-drupal-link-system-path="node/9">Контакты</a>
+    <a href="/legal" class="a-link m-footer-links__link" data-drupal-link-system-path="node/11">Условия</a>
+    <a href="/privacy" title="Политика конфиденциальности" class="a-link m-footer-links__link" data-drupal-link-system-path="node/548">Политика</a>
+  </div>
+  {% else %}
+    <div class="o-footer__inner">
+      {{ footer_links }}
+    </div>
+  {% endif %}
+  <div class="o-footer__stroke"></div>
+  <div class="o-footer__bottom">
+    Сделано с <span>&#x2661;</span> в Москве © 2016-2017 CaterMe
+    <div class="o-footer__social-links">
+      {{ social_links }}
+    </div>
+  </div>
 </footer>

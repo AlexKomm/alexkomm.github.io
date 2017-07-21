@@ -1,9 +1,47 @@
-<header class="o-header{{ header_variation }}">
-  <div class="o-header__logo">
-    {% include "@molecules/logo/logo.twig" %}
-  </div>
-
-  <div class="o-header__menu-main">
-    {{ menu_main }}
-  </div>
+<header class="o-header {{ header_variation }}">
+  <nav class="o-header__nav">
+    <div class="o-header__logo">
+      {% include "@molecules/logo/logo.twig" with { url: logo_url } %}
+    </div>
+    <input type="checkbox" class="o-header__toggle" id="nav" /><label for="nav" class="o-header__bars"></label>
+    <div class="o-header__user-link">
+      {% if logged_in %}
+        {% if not user_image %}
+          {% set user_image %}
+            <div class="m-user-image m-user-image--placeholder">
+              <svg class="a-svg"><use xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#user"></use></svg>
+            </div>
+          {% endset %}
+        {% endif %}
+        {% include "@atoms/link/link.twig"
+          with {
+            url: user_link,
+            title: user_image,
+          }
+        %}
+      {% else %}
+        {% include "@atoms/link/link.twig"
+          with {
+            url: user_link,
+            title: 'Войти',
+          }
+        %}
+      {% endif %}
+    </div>
+    {% if user_menu %}
+      {{ user_menu }}
+    {% endif %}
+    {% include "@atoms/button/button.twig"
+      with {
+        url: action_button_url,
+        text: action_button_title,
+        extra_classes: 'o-header__order-button js-toggle-popup-form'
+      }
+    %}
+    <div class="o-header__contact">
+      <a href="tel:+74951780717" class="o-header__phone-link a-link a-link--green">+7 (495) 178-07-17</a>
+    </div>
+  </nav>
+  <div class="o-header__border"></div>
 </header>
+

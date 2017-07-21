@@ -1,13 +1,23 @@
 <section class="l-grid__item m-format-card js-lazy-bg" data-original="{{ image }}">
   <div class="m-format-card__inner">
-    <h3 class="a-heading__h3-bold m-format-card__title">{{ title }}</h3>
+    {% include "@atoms/00-type/00-heading.twig"
+      with {
+        heading: {
+          label: title,
+          tag: 'div',
+          level: 3,
+          color: "light",
+          classes: ['m-format-card__title']
+        }
+      }
+    %}
     <div class="m-format-card__aside">
-      {{ pricing }}
+      {{ pricing }}<br>
       {{ people }}
     </div>
     <p class="m-format-card__description">{{ description }}</p>
-    <div class="m-format-card__button">
-      <a href="#" class="a-btn a-btn--transparent">Разместить заявку</a>
+    <div class="m-format-card__button-wrapper">
+      <a href="javascript:void(0);" class="m-format-card__button js-toggle-popup-form"{% if format_id %} data-format-id="{{ format_id }}"{% endif %}>Разместить заявку</a>
     </div>
   </div>
 </section>

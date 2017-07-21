@@ -1,0 +1,19 @@
+<div class="o-social-links">
+  <div class="o-social-links__inner u-grid-container">
+    {% include "@atoms/00-type/00-heading.twig"
+      with {
+        heading: {
+          label: 'Понравился сервис? Расскажите друзьям!',
+          level: 4,
+          tag: 'div',
+          align: "center",
+          color: "dark",
+          classes: ['o-social-links__title']
+        }
+      }
+    %}
+    <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+    <script src="//yastatic.net/share2/share.js"></script>
+    <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,gplus" data-counter=""></div>
+  </div>
+</div>

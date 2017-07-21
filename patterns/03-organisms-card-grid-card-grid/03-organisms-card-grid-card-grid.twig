@@ -1,30 +1,33 @@
-<section class="o-card-grid">
+<section class="o-card-grid{% for modifier in grid_variation %} o-card-grid--{{ modifier }}{% endfor %}">
   <header class="o-card-grid__title">
     {% block header %}
       {% include "@atoms/00-type/00-heading.twig"
       with {
-      heading: {
-      label: title,
-      level: 2,
-      variation: 4,
-      align: "center",
-      color: "light"
-      }
+        heading: {
+          label: title,
+          level: 4,
+          tag: 'div',
+          align: "center",
+          color: "light"
+        }
       }
       %}
     {% endblock %}
   </header>
   <div class="o-card-grid__inner">
+    <div class="o-card-grid__wrapper">
     {% block content %}
       {% for card in cards %}
         {% include "@molecules/card/card.twig"
         with {
-        "card_img": card.card_img,
-        "card_title": card.card_title
+          "card_img": card.card_img,
+          "card_title": card.card_title,
+          "card_variation": card_variation
         }
         %}
       {% endfor %}
     {% endblock %}
+    </div>
   </div>
   {% if footer %}
     <footer class="o-card-grid__footer">

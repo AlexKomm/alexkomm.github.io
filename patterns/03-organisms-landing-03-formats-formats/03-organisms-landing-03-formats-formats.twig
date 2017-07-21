@@ -1,4 +1,15 @@
 <div class="o-formats">
+  {% include "@atoms/00-type/00-heading.twig"
+  with {
+    heading: {
+      label: title,
+      tag: 'div',
+      level: 3,
+      align: "center",
+      color: "dark",
+      classes: ['o-formats__title'],
+    }
+  } %}
   {% embed "@layouts/grid/grid.twig" with {
   grid_variation: ['2col', 'spaceless']
   } %}
@@ -16,7 +27,8 @@
           "description": format.description,
           "image": format.image,
           "pricing": format.pricing,
-          "people": format.people
+          "people": format.people,
+          "format_id": format.format_id
           }
           %}
         {% endfor %}

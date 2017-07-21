@@ -5,8 +5,8 @@
       with {
       heading: {
       label: title,
-      level: 2,
-      variation: 4,
+      tag: 'div',
+      level: 4,
       align: "center",
       color: "light"
       }
@@ -14,13 +14,17 @@
       %}
     {% endblock %}
   </header>
-  {% include "@organisms/carousel/carousel.twig"
-  with {
-    carousel_class: "js-carousel-partners",
-    carousel_items: partners
-  }
-  %}
+  <div class="o-partners__carousel">
+    {% include "@organisms/carousel/carousel.twig"
+      with {
+        carousel_class: "js-carousel-partners",
+        carousel_items: partners,
+        carousel_controls: 0,
+        carousel_pagination: 1,
+      }
+    %}
+  </div>
   <footer class="o-partners__footer">
-    <a href="#" class="a-btn--green-white-hover">Все партнеры</a>
+    {#<a href="#" class="a-btn--green-white-hover">Все партнеры</a>#}
   </footer>
 </section>

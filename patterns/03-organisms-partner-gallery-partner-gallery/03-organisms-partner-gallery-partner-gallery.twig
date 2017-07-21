@@ -1,0 +1,28 @@
+<div class="o-partner-gallery js-partner-gallery">
+  <div class="o-partner-gallery__title">{{ title }}</div>
+  <ul class="o-partner-gallery__formats">
+    {% for id, format in formats %}
+      <li class="o-partner-gallery__format">
+        <a href="javascript:void(0);" class="o-partner-gallery__format-switch" data-gallery-component="switch" data-format="{{ id }}">{{ format }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="o-partner-gallery__main" data-gallery-component="for">
+    {% for id, set in images %}
+      {% for image in set %}
+          <div data-format="{{ id }}">
+            <img class="o-partner-gallery__img" data-lazy="{{ image.img }}">
+            <div class="o-partner-gallery__caption">{{ image.title }}</div>
+          </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+  <div class="o-partner-gallery__pager" data-gallery-component="pager"></div>
+  <div class="o-partner-gallery__nav" data-gallery-component="nav">
+    {% for id, set in images %}
+      {% for image in set %}
+        <div data-format="{{ id }}"><img class="o-partner-gallery__img" data-lazy="{{ image.img }}"></div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>

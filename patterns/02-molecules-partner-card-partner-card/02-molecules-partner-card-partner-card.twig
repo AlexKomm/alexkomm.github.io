@@ -1,11 +1,10 @@
-<div class="m-partner-card">
+<div class="m-partner-card" title="{{ partner_name }}">
   <div class="m-partner-card__inner">
-    <div class="m-partner-card__logo">
-      <img alt="Логотип" class="m-partner-card__image js-lazy-bg" data-original="{{ logo }}">
-    </div>
+    <a href="{{ partner_url }}" class="m-partner-card__logo js-lazy-bg" data-original="{{ logo }}"></a>
     {% include "@molecules/stars/stars.twig"
     with {
-    rating: rating
+    rating: rating,
+    show_rating: 1
     }
     %}
   </div>
@@ -16,7 +15,7 @@
     </div>
     <div class="m-partner-card__link">
       <div class="a-color-green a-type--base">{{ completed_orders_count }}</div>
-      сделок
+      заказов
     </div>
   </div>
 </div>

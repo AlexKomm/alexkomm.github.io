@@ -1,0 +1,25 @@
+<div class="m-partner-heading">
+  <div class="m-partner-heading__logo">
+    <img src="{{ logo }}" alt="Логотип партнера">
+  </div>
+  <div class="m-partner-heading__info">
+    <div class="m-partner-heading__name">{{ name }}</div>
+    <div class="m-partner-heading__stats">
+      <span class="m-partner-heading__city">{{ city }}</span>
+      <span class="m-partner-heading__year">{{ year }}</span>
+      {% include "@molecules/stars/stars.twig"
+        with {
+          rating: rating,
+          show_rating: 1,
+          variations: ['inline'],
+        }
+      %}
+      {% include "@molecules/feedback-count/feedback-count.twig"
+        with {
+          count: feedback_count
+        }
+      %}
+    </div>
+  </div>
+
+</div>

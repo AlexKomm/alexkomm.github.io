@@ -1,0 +1,19 @@
+<div class="o-body">
+  <div class="o-body__inner">
+    {% if title %}
+      {% include "@atoms/00-type/00-heading.twig"
+      with {
+        heading: {
+          label: title,
+          level: 1,
+          variation: 3,
+          align: "left",
+          color: "dark",
+          classes: ['o-body__title']
+        }
+      }
+      %}
+    {% endif %}
+    {{ body }}
+  </div>
+</div>

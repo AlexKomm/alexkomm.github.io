@@ -1,12 +1,24 @@
-<section class="o-masthead js-lazy-bg" data-original="{{ masthead_image }}">
+<section class="o-masthead js-lazy-bg" data-original="{{ masthead_image }}" id="masthead">
+  <div class="o-masthead__top">
+    {% block masthead_top %}{% endblock %}
+  </div>
   <div class="o-masthead__inner">
-    <header class="o-masthead__title">
-      <h1 class="a-heading__h2 o-masthead__title">
-        {{ masthead_title }}
-      </h1>
-      <p class="a-type--xlarge o-masthead__subtitle">
+    <header class="o-masthead__header">
+      {% include "@atoms/00-type/00-heading.twig"
+      with {
+        heading: {
+          label: masthead_title,
+          tag: 'div',
+          level: 3,
+          color: "light",
+          classes: ['o-masthead__title']
+        }
+      }
+      %}
+      <p class="o-masthead__subtitle">
         {{ masthead_subtitle }}
       </p>
     </header>
+    {% block masthead_content %}{% endblock %}
   </div>
 </section>

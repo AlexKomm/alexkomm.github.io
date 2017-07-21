@@ -1,1 +1,6 @@
-{% extends '@organisms/card-grid/card-grid.twig' %}
+{% include '@organisms/card-grid/card-grid.twig'
+  with {
+    grid_variation: ['services'],
+    card_variation: ['service'],
+  }
+%}

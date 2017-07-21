@@ -1,0 +1,25 @@
+{% set tag = tag ?: 'section' %}
+
+<{{ tag }} class="l-block{% if additional_classes %} {{ additional_classes|join(' ') }}{% endif %}
+{% if background_img %} l-block--image-background js-lazy-bg" data-original="{{ background_img }}"{% else %}"{% endif %}">
+  <div class="l-block__inner">
+    {% if title %}
+      <div class="l-block__title">
+        {% include "@atoms/00-type/00-heading.twig"
+          with {
+            heading: {
+              label: title,
+              tag: 'div',
+              level: 3,
+              align: "center",
+              color: "light",
+              classes: ['o-formats__title'],
+            }
+        } %}
+      </div>
+    {% endif %}
+    <div class="l-block__content">
+      {{ content }}
+    </div>
+  </div>
+</{{ tag }}>

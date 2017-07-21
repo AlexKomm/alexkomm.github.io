@@ -5,8 +5,8 @@
       with {
       heading: {
       label: title,
-      level: 2,
-      variation: 4,
+      tag: 'div',
+      level: 4,
       align: "center",
       color: "dark"
       }
@@ -14,12 +14,17 @@
       %}
     </header>
     <div class="o-feedback__main">
-      {% for feedback in feedbacks %}
-        {{ feedback.content }}
-      {% endfor %}
+      {% include "@organisms/carousel/carousel.twig"
+        with {
+          carousel_class: "js-carousel-feedbacks",
+          carousel_items: feedbacks,
+          carousel_controls: 0,
+          carousel_pagination: 1,
+        }
+      %}
     </div>
-    <footer class="o-feedback__footer">
-      <a href="#" class="a-btn--transparent-green-hover">Все {{ feedback_count }}</a>
-    </footer>
+    {#<footer class="o-feedback__footer">#}
+      {#<a href="#" class="a-btn--transparent-green-hover">Все {{ feedback_count }}</a>#}
+    {#</footer>#}
   </div>
 </section>

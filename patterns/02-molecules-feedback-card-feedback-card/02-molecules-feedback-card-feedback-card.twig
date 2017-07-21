@@ -1,7 +1,7 @@
 <div class="m-feedback-card">
   <blockquote class="m-feedback-card__quote">
     <p class="m-feedback-card__text">&ldquo;{{ feedback_text }}&rdquo;</p>
-    <img class="m-feedback-card__author-image" alt="Автор отзыва" src="{{ user_image }}">
+    <img class="m-feedback-card__author-image" alt="Автор отзыва" src="{{ base_path ~ directory ~ user_image }}">
     <footer class="m-feedback-card__author">
       &nbsp;&ndash; {{ user_desc }}
     </footer>

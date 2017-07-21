@@ -2,21 +2,31 @@
   <div class="l-page__header">
     {% include "@organisms/site/00-header/header.twig"
       with {
-        menu_main: header_menu_main,
+        logo_url: header_logo_url,
+        user_image: header_user_image,
+        user_link: header_user_link,
+        user_menu: header_user_menu,
+        action_button_url: header_action_button_url,
+        action_button_title: header_action_button_title,
+        header_variation: header_variation
       }
     %}
   </div>
 
-  <div class="l-page__utilities">
-    {% if messages %}
-      <div class="l-page__utilities-messages">
-        {{ messages }}
-      </div>
-    {% endif %}
+  {% if breadcrumbs %}
+    {{ breadcrumbs }}
+  {% endif %}
 
+  <div class="l-page__utilities">
     {% if tabs %}
       <div class="l-page__utilities-tabs">
         {{ tabs }}
+      </div>
+    {% endif %}
+
+    {% if messages %}
+      <div class="l-page__utilities-messages">
+        {{ messages }}
       </div>
     {% endif %}
   </div>
@@ -28,7 +38,9 @@
   <div class="l-page__footer">
     {% include "@organisms/site/01-footer/footer.twig"
       with {
-        year: footer_year,
+        footer_links: footer_links,
+        social_links: social_links,
+        short: short
       }
     %}
   </div>

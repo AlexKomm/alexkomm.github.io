@@ -1,4 +1,4 @@
-<div class="m-stars">
+<div class="m-stars{% for variation in variations %} m-stars--{{ variation }}{% endfor %}" title="Рейтинг партнера: {{ rating|round(2) }}">
   <div class="m-stars__item">
     <div class="m-stars__layer--top js-stars-rollover" style="width:{{ (rating / 5) * 100 }}%;">
       <span class="m-stars__icon"></span>
@@ -15,4 +15,11 @@
       <span class="m-stars__icon"></span>
     </div>
   </div>
+  {% if show_rating %}
+    <div class="m-stars__rating">
+      {% if rating %}
+        {{ rating|round(2) }}
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
